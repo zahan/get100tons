@@ -13,7 +13,7 @@ while choice == 'да': #Если выбрали да то запускаем к
     print ("В этом подходе вы подняли %d, кг." %calc)
     
     forLog = open('log.txt', 'a') 
-    forLog.write(str(calc))
+    forLog.write(str(calc) + '\n')
     forLog.close() 
                 
 else:
