@@ -1,11 +1,7 @@
-def idealWeight(x, sex): #Определяем функцию для расчета идеального веса 
-    if sex == 'муж':
-        return (x - 100) - (x - 170) / 2 # Если выбрали "М" то счтиаем по формуле
-    elif sex == 'жен':
-        return (x - 100) - (x - 150) / 2 # Если выбрали "Ж" то по другой формуле
+def totalWeight(weight, times): 
+        return weight * times 
 
-
-choice = input('Хотите узнать свой идеальный вес? да/нет\n') # Вообще не нужен вопрос, но можно записать тех кто не хочет сотрудничать
+choice = input('Хотите узнать свой идеальный вес? да/нет\n') 
 
 
 
@@ -37,29 +33,7 @@ while choice == 'да': #Если выбрали да то запускаем к
                 print('Программа завершена') #Если нет то обрываем цикл
                 break
             
-    elif pol == 'муж': #Если выбрали мужчину то считаем по формуле 2
-            currentHeight = int(input("Введите свой рост в см\n"))
-            calc = int(idealWeight(currentHeight, pol))
-            rekomend = yourWeight - calc
-            print ("Ваш идеальный вес %d" %calc)
-            if rekomend < 0:
-                plusRec = abs(rekomend)
-                print('Вам нужно набрать %d' %plusRec)
-            else: print('Вам нужно сбросить %d' %rekomend)
-            
-            name = input('Введите Ваше имя\n')
-            print('Всего доброго %s' %name)
-            forLog = open('log.txt', 'a')
-            forLog.write(name + ' - ' + str(yourWeight) + ' - ' + str(calc) + ' - ' + str(rekomend) + '\n' )
-            forLog.close()
-            
-            toStart = input('Поробовать еще? да/нет\n')
-            if toStart == 'да':
-                print('Начнем сначала')
-            elif toStart == 'нет':
-                print('Программа завершена')
-                break
-
+    
     else: print('НЕВЕРНОЕ ЗНАЧЕНИЕ. Введите значение "жен" или "муж"')
 
 if choice == 'нет': #Если пользователь отвечает нет в начале програмы
