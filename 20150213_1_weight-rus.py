@@ -1,12 +1,24 @@
-def totalWeight(weight, times): 
-        return weight * times 
-
-weight = 24
-choice = input('Ввести подход? да/нет\n') 
+weight = 24 
 totalCounter = 0
 
+while True:
+        choice = input('Ввести подход? y/n\n')
+        if choice == 'y':
+               currentReps = int(input('Введите количество повторений'))
+               totalCounter += currentReps
 
-while choice == 'да': #Если выбрали да то запускаем калькулятор
+               currentTotalWeight = currentReps * weight
+               totalCounterWeight = totalCounter * weight
+
+               print('В этом подъеме Вы подняли %d кг' %currentTotalWeight)
+               print('Всего подянто %d кг' %totalCounterWeight)
+               
+        
+
+
+
+"""
+while choice == 'да': 
     numberOfreps = int(input('Введите количество повторов \n'))
         
     calc = int(totalWeight(weight, numberOfreps)) 
@@ -19,5 +31,6 @@ while choice == 'да': #Если выбрали да то запускаем к
 else:
     print('Неверно!')
     print('Программа завершена!')
+"""
     
 
