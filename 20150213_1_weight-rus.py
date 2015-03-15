@@ -3,7 +3,8 @@ import datetime
 nowDate = datetime.date.today()
 print (nowDate)
 
-
+forLog = open('journal.txt', 'a') # Открываем журнал для записи
+forLog.write('\n' + '\n' + 'Тренировка от ' + str(nowDate) + '\n' + '-' * 23 + '\n')
 
 weight = 24 #Вес отягощения
 totalCounter = 0
@@ -24,13 +25,10 @@ while True:
                print('В этом подъеме Вы подняли %d кг' %currentTotalWeight)
                print('Всего подянто %d кг' %totalCounterWeight)
 
-               forLog = open('journal.txt', 'a') #Записываем каждый подход в журнал
-               forLog.write('Подход №' + str(setCounter) + '; ' + 'Вес' + ' - ' + str(currentTotalWeight) + '\n') 
-               forLog.close()
+               forLog.write('Подход №' + str(setCounter) + '; ' + 'Вес' + ' - ' + str(currentTotalWeight) + 'кг' + '\n') #Записываем каждый подход в журнал
 
         elif choice == 'n':
-               forLog = open('journal.txt', 'a')
-               forLog.write('=' * 21 + '\n' + ' - Суммарный вес - ' + str(totalCounterWeight) + '\n' + '=' * 21 + '\n') #Записываем в журнал суммарный вес за треню
+               forLog.write('=' * 23 + '\n' + 'Суммарный вес - ' + str(totalCounterWeight) + 'кг' + '\n' + '=' * 23 + '\n') #Записываем в журнал суммарный вес за треню
                forLog.close()
 
                print('Тренировка закончена. Вы подняли %d кг' %totalCounterWeight)
