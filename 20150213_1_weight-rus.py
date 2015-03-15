@@ -1,11 +1,17 @@
+#Get100tons Трейнинг ситэмс %)
+
+#Блок содания даты
 import datetime
+nowDate = datetime.date.today() #Получаем сегоднящнюю дату без времени
+print ('Сегодня ' + str(nowDate)) #Выводим ее на экран
 
-nowDate = datetime.date.today()
-print ('Сегодня ' + str(nowDate))
-
-for line in open("journal.txt", "r"):
+#Блок рекомендованного веса
+for line in open("journal.txt", "r"): #Открываем журнал тренировок и ищем в нем последнюю строку неведомым способом
         last_line = line
-print('На прошлой тренировке Вы подняли ' + str(last_line[-6:-1]))
+lastWeight = last_line[-7:-3] #Находим с помощью среза в последей строке вес
+rekomendWeight = int(lastWeight) * 1.2 #Переводим его в число и умножаем на 20%
+print('На прошлой тренировке Вы подняли ' + str(last_line[-7:-1]))
+print('Рекомендуемый вес на этой тренировке ' + str(rekomendWeight))
 
 forLog = open('journal.txt', 'a') # Открываем журнал для записи
 forLog.write('\n' + '=' * 23 + '\n' + 'Тренировка от ' + str(nowDate) + '\n' + '=' * 23 + '\n')
